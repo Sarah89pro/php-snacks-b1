@@ -84,11 +84,11 @@
     if( empty($name) || empty($mail) || empty($age) ) {
         echo 'Inserisci i parametri';
     }
-    elseif( strlen($name) < 3 || strpos($mail, '@') === false || strpos($mail, '.') === false || is_numeric($age) ) {
-        echo 'Accesso negato' . '<br />';
+    elseif( strlen($name) < 3 || strpos($mail, '@') === false || strpos($mail, '.') === false || is_numeric($age) === false ) {
+        echo 'Accesso negato';
     }
     else {
-        echo 'Accesso riuscito' . '<br />';
+        echo 'Accesso riuscito';
     }
     ?>
 
