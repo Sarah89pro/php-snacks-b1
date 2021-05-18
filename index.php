@@ -81,29 +81,15 @@
     $mail = $_GET ['mail']; //sarah@gmail.com
     $age = $_GET ['age']; //31
 
-
-    //1. name sia più lungo di 3 caratteri
-    if (empty($name)) {
-        echo 'inserisci un nome';
+    if( empty($name) || empty($mail) || empty($age) ) {
+        echo 'Inserisci i parametri';
     }
-    elseif (strlen($name) > 3) {
-        echo 'il nome è più lungo di 3 caratteri';
+    elseif( strlen($name) < 3 || strpos($mail, '@') === false || strpos($mail, '.') === false || is_numeric($age) ) {
+        echo 'Accesso negato' . '<br />';
     }
     else {
-        echo 'i caratteri che compongono il nome non superano i 3 caratteri';
+        echo 'Accesso riuscito' . '<br />';
     }
-
-    //2. che mail contenga un punto e una chiocciola
-    if (empty($mail)) {
-        echo 'inserisci una mail';
-    }
-    elseif (strpos($mail, '@') === false || strpos($mail, '.') === false) {
-        echo 'accesso negato';
-    }
-    else {
-        echo 'accesso riuscito';
-    }
-
     ?>
 
 
