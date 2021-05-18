@@ -63,6 +63,51 @@
 
 
 
+    <?php 
+    /*SNACK2
+    Passare come parametri GET (query string) name, mail e age
+    verificare (cercando i metodi che non
+    conosciamo nella documentazione) che:
+
+    3. che age sia un numero.
+    Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”*/
+    ?>
+
+    <br>
+
+    <?php
+    //creazione variabili
+    $name = $_GET ['name']; //sarah
+    $mail = $_GET ['mail']; //sarah@gmail.com
+    $age = $_GET ['age']; //31
+
+
+    //1. name sia più lungo di 3 caratteri
+    if (empty($name)) {
+        echo 'inserisci un nome';
+    }
+    elseif (strlen($name) > 3) {
+        echo 'il nome è più lungo di 3 caratteri';
+    }
+    else {
+        echo 'i caratteri che compongono il nome non superano i 3 caratteri';
+    }
+
+    //2. che mail contenga un punto e una chiocciola
+    if (empty($mail)) {
+        echo 'inserisci una mail';
+    }
+    elseif (strpos($mail, '@') === false || strpos($mail, '.') === false) {
+        echo 'accesso negato';
+    }
+    else {
+        echo 'accesso riuscito';
+    }
+
+    ?>
+
+
+
 
 
 </body>
