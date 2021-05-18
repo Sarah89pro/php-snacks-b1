@@ -68,7 +68,8 @@
     Passare come parametri GET (query string) name, mail e age
     verificare (cercando i metodi che non
     conosciamo nella documentazione) che:
-
+    1. name sia più lungo di 3 caratteri
+    2. che mail contenga un punto e una chiocciola
     3. che age sia un numero.
     Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”*/
     ?>
