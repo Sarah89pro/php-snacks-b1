@@ -96,21 +96,21 @@
     Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta*/
     ?>
 
-    <ul>
         <h2>Numeri random</h2>
         <?php
 
-        for($i = 0; $i < 15; $i++) :?>
-            <li>
-                <?php
-                if (!in_array(rand( 1, 100 ), $randomNumbers)) {
-                    echo $randomNumbers[] = rand( 1, 100 ). '<br />'; //ma così li genera doppi, mi ci rimetto stasera
-                }
-                echo $randomNumbers[] = rand( 1, 100 ). '<br />'; ?>
-            </li>
-        <?php endfor; ?>
-    </ul>
+        $numbers =[];
 
+        for($i = 0; $i < 15; $i++) {
+            $randomNumbers = rand( 1, 100);
+            while (in_array($randomNumbers, $numbers)) {
+                $randomNumbers = rand( 1, 100);
+            }
+            $numbers[] = $randomNumbers;
+        }
+
+        var_dump($numbers);
+        ?>
 
 
 
